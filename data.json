@@ -1,0 +1,7 @@
+var CPU = {
+	index: "860",
+	manufacturerCPU: "AMD",
+	seriesCPU: "AMDA10",
+	modelCPU: "A10-9630P (Bristol Ridge)",
+	priceCPU: "2450.25"
+}

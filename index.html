@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JS</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<form action="#" autocomplete="off">
+		<div class="CPU">
+			<label for="proizvCPU">Производитель CPU</label>
+			<input type="text" id="proizvCPU" list="proizvCPU1" name="proizvCPU" required size="5">
+			<label for="seriesCPU">Серия CPU</label>
+			<input type="text" id="seriesCPU" list="proizvCPU1" name="seriesCPU" required size="10">
+			<label for="modelCPU">Модель CPU</label>
+			<input type="text" id="modelCPU" list="proizvCPU1" name="modelCPU" required size="10">
+		</div>
+		<div class="disk">
+			<label for="HDD">HDD</label>
+			<input type="number" id="HDD" list="proizvCPU1" name="HDD" required size="5" step="40">
+			<label for="SSD">SSD</label>
+			<input type="number" id="SSD" list="proizvCPU1" name="SSD" required size="10" step="40" min="0" max="1000">
+		</div>
+		<div class="ram">
+			<label for="RAM">RAM</label>
+			<input type="number" id="RAM" list="proizvCPU1" name="RAM" required size="5" value="0">
+		</div>
+		<div class="VGA">
+			<label for="proizvVGA">Производитель VGA</label>
+			<input type="text" id="proizvVGA" list="proizvVGA1" name="proizvVGA" required size="5">
+			<label for="seriesVGA">Серия VGA</label>
+			<input type="text" id="seriesVGA" list="proizvVGA1" name="seriesVGA" required size="10">
+			<label for="modelVGA">Модель VGA</label>
+			<input type="text" id="modelVGA" list="proizvVGA1" name="modelVGA" required size="10">
+		</div>
+		<div class="diagonal">
+			<label for="diagonal">Диагональ</label>
+			<input type="text" id="diagonal" list="proizvVGA1" name="diagonal" required size="10">
+		</div>
+		<div class="touch-screen">
+			<label for="touch-screen">Сенсорный экран?</label>
+			<input type="checkbox" id="touch-screen" list="ДА || НЕТ" name="touch-screen" size="10">
+		</div>
+		<div class="manufacturer">
+			<label for="manufacturer">Диагональ</label>
+			<input type="text" id="manufacturer" list="proizvVGA1" name="manufacturer" required size="10">
+		</div>
+		<div class="defects">
+			<div class="defects-item">
+				<input type="checkbox" name="def1" id="def1">
+				<label for="def1">Работает только от сети / нет АКБ</label>
+			</div>
+			<div class="defects-item">
+				<input type="checkbox" name="def2" id="def2">
+				<label for="def2">Нет ЗУ / Оголенные провода на ЗУ</label>
+			</div>
+			<div class="defects-item">
+				<input type="checkbox" name="def3" id="def3">
+				<label for="def3">Экран подлежит замене</label>
+			</div>
+			<div class="defects-item">
+				<input type="checkbox" name="def4" id="def4">
+				<label for="def4">Незначительные дефекты матрицы</label>
+			</div>
+			<div class="defects-item">
+				<input type="checkbox" name="def5" id="def5">
+				<label for="def5">Отсутствует/не работает часть кнопок</label>
+			</div>
+			<div class="defects-item">
+				<input type="checkbox" name="def6" id="def6">
+				<label for="def6">Не работает 1 USB порт</label>
+			</div>
+		</div>
+		<div class="form-buttons">
+			<button type="reset">RESET</button>
+			<button>Узнать Цену</button>
+		</div>
+	</form>
+
+	<datalist id="proizvCPU1">
+		<option value="AMD">
+			<option value="Intel">
+	</datalist>
+	<datalist id="proizvVGA1">
+		<option value="AMD">
+			<option value="Intel">
+				<option value="NVIDIA">
+	</datalist>
+
+	<script src="index.js"></script>
+	<script src="data.json"></script>
+
+</body>
+
+</html>
