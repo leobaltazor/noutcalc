@@ -30,10 +30,9 @@ function autocomplete(inp, arr) {
 			if (!(t.indexOf(c) + 1)) {
 				// e.style.display = "none";
 			} else {
-				console.log(val);
 				b = document.createElement("DIV");
-				b.innerHTML = "<strong>" + e.substr(0, val.length) + "</strong>";
-				b.innerHTML += e.substr(val.length);
+				// b.innerHTML = "<strong>" + e.substr(0, val.length) + "</strong>";
+				b.innerHTML = e;
 				/*insert a input field that will hold the current array item's value:*/
 				b.innerHTML += "<input type='hidden' value='" + e + "'>";
 				/*execute a function when someone clicks on the item value (DIV element):*/
