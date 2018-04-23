@@ -18,7 +18,7 @@
 			<label for="seriesCPU">Серия CPU</label>
 			<input type="text" id="seriesCPU" list="proizvCPU1" name="seriesCPU" required size="10">
 			<label for="modelCPU">Модель CPU</label>
-			<input type="text" id="modelCPU" list="proizvCPU1" name="modelCPU" required size="10">
+			<input type="text" id="modelCPU" name="modelCPU" required size="10">
 		</div>
 		<div class="disk">
 			<label for="HDD">HDD</label>
@@ -94,6 +94,10 @@
 
 	<script src="index.js"></script>
 	<script src="data.json"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		autocomplete(document.getElementById("modelCPU"), cpu);
+		</script>
 
 </body>
 
