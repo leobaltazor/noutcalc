@@ -4,7 +4,8 @@ var CPU = [{
 	seriesCPU: "A10",
 	modelCPU: "A10-9630P (Bristol Ridge)",
 	priceCPU: "2450"
-},{
+},
+{
 	index: "860",
 	manufacturerCPU: "AMD",
 	seriesCPU: "A10",
