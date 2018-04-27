@@ -18,13 +18,13 @@
 		</div>
 		<div class="disk">
 			<label for="HDD">HDD</label>
-			<input type="number" id="HDD" list="proizvCPU1" name="HDD" required size="5" step="40">
+			<input type="number" id="HDD" list="proizvCPU1" name="HDD" required size="5" step="40" min="0">
 			<label for="SSD">SSD</label>
 			<input type="number" id="SSD" list="proizvCPU1" name="SSD" required size="10" step="40" min="0" max="1000">
 		</div>
 		<div class="ram">
 			<label for="RAM">RAM</label>
-			<input type="number" id="RAM" list="proizvCPU1" name="RAM" required size="5" value="0">
+			<input type="number" id="RAM" list="proizvCPU1" name="RAM" required size="5" value="0" min="0">
 		</div>
 		<div class="VGA">
 			<label for="modelVGA">Модель VGA</label>
@@ -85,6 +85,7 @@
 	</datalist>
 
 	<script src="index.js"></script>
+	<script src="CPU.json"></script>
 	<script src="data.json"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>

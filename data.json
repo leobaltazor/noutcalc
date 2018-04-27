@@ -1,17 +1,4 @@
-var CPU = [{
-	index: "860",
-	manufacturerCPU: "AMD",
-	seriesCPU: "A10",
-	modelCPU: "A10-9630P (Bristol Ridge)",
-	priceCPU: "2450"
-},
-{
-	index: "860",
-	manufacturerCPU: "AMD",
-	seriesCPU: "A10",
-	modelCPU: "A10-9620P (Bristol Ridge)",
-	priceCPU: "2600"
-}]
+
 var cpu = [];
 for (let i = 0; i < CPU.length; i++) {
 	cpu.push(CPU[i].manufacturerCPU +" "+ CPU[i].seriesCPU +" " + CPU[i].modelCPU)
