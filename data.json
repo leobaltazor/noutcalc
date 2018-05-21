@@ -1,5 +1,0 @@
-
-var cpu = [];
-for (let i = 0; i < CPU.length; i++) {
-	cpu.push(CPU[i].manufacturerCPU +" "+ CPU[i].seriesCPU +" " + CPU[i].modelCPU)
-}

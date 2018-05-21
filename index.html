@@ -11,8 +11,8 @@
 </head>
 
 <body>
-	<form action="#" autocomplete="off">
-		<div class="CPU">
+	<form autocomplete="off">
+		<div class="CPU autocomplete">
 			<label for="modelCPU">Модель CPU</label>
 			<input type="text" id="modelCPU" name="modelCPU" required size="50">
 		</div>
@@ -24,7 +24,22 @@
 		</div>
 		<div class="ram">
 			<label for="RAM">RAM</label>
-			<input type="number" id="RAM" list="proizvCPU1" name="RAM" required size="5" value="0" min="0">
+			<!-- <input type="number" id="RAM" list="proizvCPU1" name="RAM" required size="5" value="0" min="0"> -->
+			<select name="RAM" id="RAM" required >
+				<option value="0.5">512 MB</option>
+				<option value="1">1 GB</option>
+				<option value="2" selected>2 GB</option>
+				<option value="3">3 GB</option>
+				<option value="4">4 GB</option>
+				<option value="5">5 GB</option>
+				<option value="6">6 GB</option>
+				<option value="8">8 GB</option>
+				<option value="10">10 GB</option>
+				<option value="12">12 GB</option>
+				<option value="16">16 GB</option>
+				<option value="32">32 GB</option>
+				<option value="64">64 GB</option>
+			</select>
 		</div>
 		<div class="VGA">
 			<label for="modelVGA">Модель VGA</label>
@@ -84,13 +99,8 @@
 				<option value="NVIDIA">
 	</datalist>
 
-	<script src="index.js"></script>
-	<script src="CPU.json"></script>
-	<script src="data.json"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-		autocomplete(document.getElementById("modelCPU"), cpu);
-		</script>
+	<script src="index.js"></script>
 
 </body>
 

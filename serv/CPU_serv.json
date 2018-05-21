@@ -1,4 +1,4 @@
-var CPU = [
+[
 {
   "index":"1",
   "manufacturerCPU":"INTEL",
@@ -8959,4 +8959,4 @@ var CPU = [
   "ядра":"",
   "Дата выпуска":""
 }
-];
+]
