@@ -5,33 +5,66 @@ var cors = require("cors");
 var firebase = require("firebase");
 var config = require("../config/config.js");
 
-firebase.initializeApp(config.firebase);
-let user = firebase.auth();
-let db = firebase.database();
-let dbref = db.ref("cpu-nout").once("value", function(snapshot) {
-  //   console.log(snapshot.val());
-  let arr = [];
+// firebase.initializeApp(config.firebase);
+// let user = firebase.auth();
+// let db = firebase.database();
+// let dbref = db.ref("cpu-nout").once("value", function(snapshot) {
+//   // console.log(snapshot.val()[0]);
+//   let arr = [];
+//   snapshot.forEach(function(data) {
+//     // console.log(data.val());
+//     arr.push(data.val());
+//   });
+//     console.log(arr);
 
-  //   return arr
+//   //   return arr;
+// });
+// console.log("dbref=" + dbref);
+
+let arr = [];
+var admin = require("firebase-admin");
+var serviceAccount = require("../config/calc-nout-pc-price-firebase-adminsdk-asvca-5006542dfe.json");
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://calc-nout-pc-price.firebaseio.com"
 });
-// console.log(dbref);
+const db = admin.database();
+db.ref("cpu-nout").once("value", function(snapshot) {
+  // console.log(snapshot.val()[0]);
+  let arr = [];
+  snapshot.forEach(function(data) {
+    // console.log(data.val());
+    arr.push(data.val());
+  });
+    // console.log(arr);
+
+  return arr;
+});
+console.log("sssss" + arr);
 
 let calcN = express();
-calcN.use(bodyParser.json());
+calcN.use(express.static("public"));
 calcN.use(cors());
+calcN.use(bodyParser.json());
 
-calcN.listen(8090, function() {
-  console.log("run server 8090");
-});
-
-calcN.get("/CPU", function(req, res) {
+calcN.post("/cpu", function(req, res, next) {
   if (req.body && req.body.message) {
     res.send(JSON.stringify(req.body));
-	const CC = readData(_cpu);
-	return res.send(CC);
+    return next();
+    // return res.send(req.body);
   } else {
     res.send("Неправильный параметр");
   }
+});
+
+calcN.get("/cpu", function(req, res) {
+  const CC = readData(_cpu);
+  //   const CC = dbref;
+  return res.send(JSON.stringify(CC));
+});
+
+calcN.listen(8090, function() {
+  console.log("run server 8090");
 });
 
 var _cpu = [];
@@ -45,7 +78,7 @@ function readData(_cpu) {
   });
   return _cpu;
 }
-
+readData(_cpu);
 function nout(CPU, RAM, HDD, SSD, VGA, diag, manufacturer, touchscreen) {
   this.CPU = CPU;
   this.RAM = RAM;
