@@ -31,11 +31,15 @@ admin.initializeApp({
 const db = admin.database();
 db.ref("cpu-nout").once("value", function(snapshot) {
   // console.log(snapshot.val()[0]);
-  let arr = [];
-  snapshot.forEach(function(data) {
+	// let arr = [];
+	[].forEach.call(snapshot, function(data) {
     // console.log(data.val());
     arr.push(data.val());
-  });
+  });)
+  // snapshot.forEach(function(data) {
+  //   // console.log(data.val());
+  //   arr.push(data.val());
+  // });
     // console.log(arr);
 
   return arr;
